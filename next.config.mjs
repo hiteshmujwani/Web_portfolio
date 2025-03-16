@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["api.microlink.io", "assets.aceternity.com"], // Allow external image source
+    domains: [
+      "api.microlink.io",
+      "assets.aceternity.com",
+      "images.unsplash.com",
+    ], // Allow external image source
   },
 };
 

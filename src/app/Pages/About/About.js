@@ -3,7 +3,7 @@ import AboutContent from "./_components/AboutContent";
 
 const About = () => {
   return (
-    <div className="font-lora  relative bg-[#EEEEED]/90 dark:bg-[#000000]/90 text-black dark:text-[#EEEEED] px-4 sm:px-12 xl:px-24">
+    <div className="font-lora relative px-4 sm:px-12 xl:px-24">
       <div className="h-full w-full absolute z-[-1] top-0 left-0 ">
         <img
           src="/aboutbgmobile.png"
