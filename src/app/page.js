@@ -5,6 +5,7 @@ import { ScrollDown } from "./_components/ScrollDown";
 import About from "./Pages/About/About";
 import Experience from "./Pages/Experience/Experience";
 import Hero from "./Pages/Hero/Hero";
+import Projects from "./Pages/Projects/Projects";
 import Skills from "./Pages/Skills/Skills";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <About />
       <Skills />
       <Experience />
+      <Projects />
     </div>
   );
 }

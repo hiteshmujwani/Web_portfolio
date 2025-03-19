@@ -1,3 +1,5 @@
+import { Subtitles } from "lucide-react";
+
 export const Expe = [
   {
     designation: "Frontend Developer",
@@ -214,4 +216,98 @@ export const otherTools = [
   },
 ];
 
-console.log(frontendSkills, backendSkills, otherTools);
+export const projectsData = [
+  {
+    title: "Personol Portfolio",
+    Subtitles: "Responsive Portfolio For Personal Projects",
+    description:
+      "A visually stunning and fully responsive portfolio showcasing my skills, experience, and projects. Built with modern web technologies, it delivers an engaging and seamless user experience.",
+    techStack: ["React.js", "Tailwind CSS", "Framer Motion", "Vercel"],
+    image:
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742395919/uxrbzcsvwrzdrehf7m7t.png",
+    liveLink: "https://hiteshmujwani.online",
+    github: "https://github.com/hiteshmujwani",
+    videoLink: "",
+    thumbnailLink: "",
+    duration: "10 Days",
+    content: <div>Hitesh Mujwani</div>,
+  },
+
+  {
+    title: "Eatzaa - Qr Menu System",
+    Subtitles: "Web Application",
+    description:
+      "A web application designed for restaurants and cafés to provide an online menu and table-based food ordering system. Customers can scan a QR code, access the menu, and place orders with real-time payment integration via Razorpay. Separate access is provided for admins and users, ensuring smooth order management and tracking.",
+    techStack: [
+      "MERN Stack",
+      "Next.js",
+      "Socket.io",
+      "Razorpay",
+      "Tailwind CSS",
+    ],
+    image:
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742396310/te4xxl2yyo7orkcihv20.png", // Replace with actual image URL
+    liveLink: "https://github.com/hiteshmujwani",
+    github: "https://github.com/hiteshmujwani",
+    videoLink: "",
+    thumbnailLink: "",
+    duration: "1 Month",
+    content: <div>Hitesh Mujwani</div>,
+  },
+  {
+    title: "QuickDrive",
+    Subtitles: "Web Application",
+    description:
+      "QuickDrive is a web-based application that allows users to store files and images on the cloud with a responsive and modern UI. It features secure file sharing via email and the ability to protect files with passwords, ensuring safe and private access.",
+    techStack: [
+      "Next.js",
+      "Firebase",
+      "Tailwind CSS",
+      "Cloudinary",
+      "Nodemailer",
+    ],
+    image:
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742396059/n16sti18mefqsebslqt9.png", // Replace with actual image URL
+    liveLink: "https://github.com/hiteshmujwani",
+    github: "https://github.com/hiteshmujwani",
+    videoLink: "",
+    thumbnailLink: "",
+    duration: "2 Weeks",
+    content: <div>Hitesh Mujwani</div>,
+  },
+  {
+    title: "PingMe",
+    Subtitles: "Web Application + Android Application",
+    description:
+      "PingMe is a responsive chat application that enables real-time messaging, group chats, and file sharing. It features WebSocket-based live updates and supports both web and mobile platforms for seamless communication.",
+    techStack: [
+      "React.js",
+      "React Native",
+      "Socket.io",
+      "Firebase",
+      "Tailwind CSS",
+    ],
+    image:
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742396310/te4xxl2yyo7orkcihv20.png", // Replace with actual image URL
+    liveLink: "https://github.com/hiteshmujwani",
+    github: "https://github.com/hiteshmujwani",
+    videoLink: "",
+    thumbnailLink: "",
+    duration: "3 Weeks",
+    content: <div>Hitesh Mujwani</div>,
+  },
+  {
+    title: "Vibez",
+    Subtitles: "Coming Soon...",
+    description:
+      "An exciting new project that is currently under development. Stay tuned for more updates!",
+    techStack: ["React.js", "Next.js", "Tailwind CSS"],
+    image: "https://i.imgur.com/sample-image.png", // Replace with actual image URL
+    liveLink: "https://github.com/hiteshmujwani",
+    github: "https://github.com/hiteshmujwani",
+    videoLink: "",
+    thumbnailLink: "",
+    duration: "In Progress",
+    content: <div>Hitesh Mujwani</div>,
+  },
+];

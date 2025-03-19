@@ -5,6 +5,7 @@ const nextConfig = {
       "api.microlink.io",
       "assets.aceternity.com",
       "images.unsplash.com",
+      "res.cloudinary.com",
     ], // Allow external image source
   },
 };
