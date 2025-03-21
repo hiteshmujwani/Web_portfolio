@@ -6,6 +6,7 @@ import About from "./Pages/About/About";
 import Experience from "./Pages/Experience/Experience";
 import Hero from "./Pages/Hero/Hero";
 import Projects from "./Pages/Projects/Projects";
+import Services from "./Pages/Services/Services";
 import Skills from "./Pages/Skills/Skills";
 
 export default function Home() {
@@ -17,6 +18,7 @@ export default function Home() {
       <Skills />
       <Experience />
       <Projects />
+      <Services />
     </div>
   );
 }

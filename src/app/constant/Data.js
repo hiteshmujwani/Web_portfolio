@@ -1,4 +1,12 @@
-import { Subtitles } from "lucide-react";
+import {
+  AppWindowIcon,
+  Code,
+  CodeIcon,
+  Codesandbox,
+  CodeSquare,
+  MousePointer2Icon,
+  Subtitles,
+} from "lucide-react";
 
 export const Expe = [
   {
@@ -309,5 +317,36 @@ export const projectsData = [
     thumbnailLink: "",
     duration: "In Progress",
     content: <div>Hitesh Mujwani</div>,
+  },
+];
+
+export const Services = [
+  {
+    title: "Web Development",
+    icon: <CodeSquare />,
+    description:
+      "Crafting responsive, fast, and SEO-friendly websites that engage visitors. From static pages to dynamic web apps, I build scalable solutions tailored to your needs.",
+    link: "https://hiteshmujwani.online",
+  },
+  {
+    title: "Full Stack Development",
+    icon: <Code />,
+    description:
+      "Delivering complete web solutions from front-end interfaces to back-end infrastructure. I create seamless, full-stack applications that are both functional and secure",
+    link: "https://hiteshmujwani.online",
+  },
+  {
+    title: "App Development",
+    icon: <AppWindowIcon />,
+    description:
+      "Designing and developing mobile apps for iOS and Android. I focus on performance, smooth user experiences, and cross-platform compatibility for your app's success.",
+    link: "https://hiteshmujwani.online",
+  },
+  {
+    title: "UI/UX Design",
+    icon: <MousePointer2Icon />,
+    description:
+      "Designing clean, user-centric interfaces that are both visually appealing and easy to navigate. I ensure your product delivers an intuitive and engaging experience.",
+    link: "https://hiteshmujwani.online",
   },
 ];
