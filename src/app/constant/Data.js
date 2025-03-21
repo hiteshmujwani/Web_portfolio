@@ -219,7 +219,7 @@ export const otherTools = [
 export const projectsData = [
   {
     title: "Personol Portfolio",
-    Subtitles: "Responsive Portfolio For Personal Projects",
+    Subtitles: "Portfolio For Personal Projects",
     description:
       "A visually stunning and fully responsive portfolio showcasing my skills, experience, and projects. Built with modern web technologies, it delivers an engaging and seamless user experience.",
     techStack: ["React.js", "Tailwind CSS", "Framer Motion", "Vercel"],

@@ -54,10 +54,10 @@ export const StickyScroll = ({ content, contentClassName }) => {
 
   return (
     <motion.div
-      className="relative flex h-[70vh] justify-between space-x-10 overflow-y-scroll  "
+      className="relative flex h-[70vh] justify-between lg:space-x-10  overflow-y-scroll  "
       ref={ref}
     >
-      <div className="div relative flex items-start h-screen py-10">
+      <div className="div relative flex items-start h-screen py-3 md:py-5 lg:py-10">
         <div className="w-full">
           {content.map((item, index) => (
             <div key={item.title + index} className="mb-15">
@@ -68,15 +68,17 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-2xl font-bold dark:text-[#eeeeed] text-black"
+                className="text-2xl font-bold dark:text-[#eeeeed] text-black mb-1"
               >
-                <div className="flex justify-between items-center">
-                  <div className="text-4xl font-medium">{item.title}</div>
+                <div className="flex justify-between items-start lg:items-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-medium">
+                    {item.title}
+                  </div>
                   <div className="flex gap-3">
                     <Link href={"https://www.hiteshmujwani.online"}>
                       <Badge
                         className={
-                          "py-1 px-2 text-base bg-[#ffffff] text-black"
+                          "py-1 px-2 text-sm sm:text-base bg-[#ffffff] text-black"
                         }
                       >
                         Live
@@ -85,7 +87,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                     <Link href={"https://github.com/hiteshmujwani"}>
                       <Badge
                         className={
-                          "py-1 px-2 text-base bg-[#ffffff] text-black"
+                          "py-1 px-2  text-sm sm:text-base bg-[#ffffff] text-black"
                         }
                       >
                         Source Code
@@ -103,7 +105,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 }}
                 className="text-2xl font-bold dark:text-[#eeeeed]/70 text-black/70"
               >
-                <div className="text-lg  font-medium flex justify-between items-center">
+                <div className="text-sm sm:text-base md:text-lg  font-medium flex gap-3 justify-between items-center">
                   <div>{item.Subtitles}</div>
                   <div>Duration : {item.duration}</div>
                 </div>
@@ -115,16 +117,18 @@ export const StickyScroll = ({ content, contentClassName }) => {
                 animate={{
                   opacity: activeCard === index ? 1 : 0.3,
                 }}
-                className="text-kg mt-10 max-w-3xl dark:text-[#eeeeed] text-black"
+                className=" mt-10 max-w-3xl dark:text-[#eeeeed] text-black"
               >
                 <div className="flex flex-col gap-3">
-                  <div className="text-xl">{item.description}</div>
-                  <div className="flex gap-2">
+                  <div className="text-base sm:text-lg md:text-xl">
+                    {item.description}
+                  </div>
+                  <div className="flex gap-2 flex-wrap">
                     {item.techStack.map((techname, index) => (
                       <Badge
                         key={index}
                         className={
-                          "py-1 px-2 text-base bg-[#ffffff] text-black"
+                          "py-1 px-2 text-sm sm:text-base bg-[#ffffff] text-black"
                         }
                       >
                         {techname}
@@ -140,7 +144,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
       </div>
       <div
         className={cn(
-          "sticky top-10 hidden h-70 w-90 overflow-hidden rounded-md bg-white lg:block",
+          "sticky top-10 hidden xl:h-[280px] w-[500px] lg:h-[230px] overflow-hidden rounded-md bg-white lg:block",
           contentClassName
         )}
       >
