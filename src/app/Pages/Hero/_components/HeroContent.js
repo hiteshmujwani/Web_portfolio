@@ -5,6 +5,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { ArrowRight, ArrowRightSquare } from "lucide-react";
 import React from "react";
+import { motion } from "motion/react";
 
 const HeroContent = () => {
   return (

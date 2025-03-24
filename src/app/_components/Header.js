@@ -1,12 +1,24 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { FlipWords } from "@/components/ui/flip-words";
 import { Download } from "lucide-react";
 import React from "react";
 import ThemeToggle from "./ThemeToggle";
+import { motion } from "motion/react";
 
 const Header = () => {
   return (
-    <div className="flex items-center py-4 sm:py-6">
+    <motion.div
+      initial={{ y: -200, opacity: 0 }}
+      animate={{
+        y: 0,
+        animation: "linear",
+        opacity: 1,
+      }}
+      transition={{ stiffness: 0, duration: 1.5 }}
+      className="flex items-center py-4 sm:py-6"
+    >
       <div className="flex justify-between items-center w-full">
         <div className="flex items-center gap-1.5">
           {/* <div className="bg-black p-1 rounded-lg">
@@ -42,27 +54,8 @@ const Header = () => {
           </Button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
 export default Header;
-
-{
-  /* <div className=" h-[10vh] flex items-center ">
-<div className="flex justify-between items-center w-full">
-  <div className="flex flex-col">
-    <div className="leading-4 text-base font-bold ">
-      HITESH MUJWANI <br />
-      <span className="text-sm font-medium">Software Developer</span>
-    </div>
-  </div>
-  <div>
-    <Button>
-      <Download />
-      Download CV
-    </Button>
-  </div>
-</div>
-</div> */
-}
