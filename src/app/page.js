@@ -1,8 +1,10 @@
+import { BlurFade } from "@/components/magicui/blur-fade";
 import CursorFollower from "./_components/CursorFollower";
 import { FloatingNav } from "./_components/Floating-Dock";
 import Header from "./_components/Header";
 import { ScrollDown } from "./_components/ScrollDown";
 import About from "./Pages/About/About";
+import Contact from "./Pages/Contact/Contact";
 import Experience from "./Pages/Experience/Experience";
 import Hero from "./Pages/Hero/Hero";
 import Projects from "./Pages/Projects/Projects";
@@ -19,6 +21,7 @@ export default function Home() {
       <Experience />
       <Projects />
       <Services />
+      <Contact />
     </div>
   );
 }

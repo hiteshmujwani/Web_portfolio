@@ -110,7 +110,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                   <div>Duration : {item.duration}</div>
                 </div>
               </motion.h2>
-              <motion.p
+              <motion.div
                 initial={{
                   opacity: 0,
                 }}
@@ -136,7 +136,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                     ))}
                   </div>
                 </div>
-              </motion.p>
+              </motion.div>
             </div>
           ))}
           <div className="h-40" />

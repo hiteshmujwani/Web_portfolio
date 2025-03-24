@@ -29,7 +29,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <ScrollDown />
     </div>
   );
 };
