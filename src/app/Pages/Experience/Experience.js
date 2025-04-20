@@ -1,22 +1,20 @@
+'use client'
+
 import React from "react";
 import ExperienceContent from "./_components/ExperienceContent";
+import { motion } from "framer-motion";
 
 const Experience = () => {
   return (
     <div className="font-lora relative px-4 sm:px-12 xl:px-24">
-      <div className="h-full w-full absolute z-[-1] top-0 left-0 ">
-        <img
-          src="/aboutbgmobile.png"
-          className="object-cover h-full w-full md:hidden dark:invert-100"
-        />
-        <img
-          src="/aboutbg.png"
-          className="object-cover h-full w-full hidden md:block dark:invert-100"
-        />
-      </div>
-      <div>
+     
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeOut" }}
+      >
         <ExperienceContent />
-      </div>
+      </motion.div>
     </div>
   );
 };

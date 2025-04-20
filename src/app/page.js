@@ -15,6 +15,7 @@ export default function Home() {
   return (
     <div className=" bg-[#EEEEED]/90 dark:bg-[#000000]/90">
       <CursorFollower />
+      <Header />
       <Hero />
       <About />
       <Skills />

@@ -20,14 +20,14 @@ export const HoverEffect = ({ items, className }) => {
         <Link
           href={item?.link}
           key={idx}
-          className="relative group  block p-2 h-full w-full"
+          className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
         >
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-slate-800/[0.8] block rounded-3xl"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -41,13 +41,28 @@ export const HoverEffect = ({ items, className }) => {
               />
             )}
           </AnimatePresence>
-          <Card>
-            <CardTitle className={"flex gap-1 items-center"}>
-              {item.icon}
-              {item.title}
-            </CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-          </Card>
+          
+          {/* Wrap the Card with motion.div for stagger effect */}
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                duration: 1,
+                ease: "easeOut",
+                delay: idx * 0.2, // Staggered delay
+              },
+            }}
+          >
+            <Card>
+              <CardTitle className={"flex gap-1 items-center"}>
+                {item.icon}
+                {item.title}
+              </CardTitle>
+              <CardDescription>{item.description}</CardDescription>
+            </Card>
+          </motion.div>
         </Link>
       ))}
     </div>
@@ -69,6 +84,7 @@ export const Card = ({ className, children }) => {
     </div>
   );
 };
+
 export const CardTitle = ({ className, children }) => {
   return (
     <h4
@@ -81,6 +97,7 @@ export const CardTitle = ({ className, children }) => {
     </h4>
   );
 };
+
 export const CardDescription = ({ className, children }) => {
   return (
     <p

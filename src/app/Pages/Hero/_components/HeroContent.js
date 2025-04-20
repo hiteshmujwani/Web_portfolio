@@ -74,9 +74,11 @@ const HeroContent = () => {
           </LinkPreview>
         </div>
         <div>
+          <a href="#contact">
           <Button className={"text-lg dark:bg-[#eeeeed]"}>
             Let's Connect <ArrowRight className="" />
           </Button>
+          </a>
         </div>
       </div>
     </div>

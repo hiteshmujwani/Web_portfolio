@@ -57,7 +57,7 @@ const ContactSection = () => {
               </div>
               <div className="flex gap-2 items-center">
                 <Globe className="h-5 w-5" />
-                <Link className="flex" href={"hiteshmujwani.online"}>
+                <Link className="flex" href={"https://hiteshmujwani.online"}>
                   Hiteshmujwani.online
                 </Link>
               </div>

@@ -57,7 +57,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
       className="relative flex h-[70vh] justify-between lg:space-x-10  overflow-y-scroll  "
       ref={ref}
     >
-      <div className="div relative flex items-start h-screen py-3 md:py-5 lg:py-10">
+      <div className="div relative flex items-start h-screen py-3 md:py-5 lg:py-16">
         <div className="w-full">
           {content.map((item, index) => (
             <div key={item.title + index} className="mb-15">
@@ -75,15 +75,7 @@ export const StickyScroll = ({ content, contentClassName }) => {
                     {item.title}
                   </div>
                   <div className="flex gap-3">
-                    <Link href={"https://www.hiteshmujwani.online"}>
-                      <Badge
-                        className={
-                          "py-1 px-2 text-sm sm:text-base bg-[#ffffff] text-black"
-                        }
-                      >
-                        Live
-                      </Badge>
-                    </Link>
+                    
                     <Link href={"https://github.com/hiteshmujwani"}>
                       <Badge
                         className={
@@ -148,13 +140,20 @@ export const StickyScroll = ({ content, contentClassName }) => {
           contentClassName
         )}
       >
-        <HeroVideoDialog
-          className=""
-          animationStyle="from-center"
-          videoSrc="https://www.youtube.com/embed/qh3NGpYRG3I?si=4rb-zSdDkVK9qxxb"
-          thumbnailSrc={content[activeCard].image ?? null}
-          thumbnailAlt="Hero Video"
-        />
+        {content.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: activeCard === index ? 1 : 0,
+            }}
+            className="absolute inset-0 h-full w-full"
+          >
+            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+          </motion.div>
+        ))}
       </div>
     </motion.div>
   );

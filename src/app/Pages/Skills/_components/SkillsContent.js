@@ -1,17 +1,37 @@
+"use client";
 import { backendSkills, frontendSkills, otherTools } from "@/app/constant/Data";
-import { Meteors } from "@/components/magicui/meteors";
-import { OrbitingCircles } from "@/components/magicui/orbiting-circles";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Badge } from "@/components/ui/badge";
 import { GlowingEffect } from "@/components/ui/glowing-effect";
-import { Box, Dot, Lock, Sparkles } from "lucide-react";
-import Image from "next/image";
+import { Box, Lock, Sparkles } from "lucide-react";
+import { motion } from "framer-motion";
 import React from "react";
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.2,
+      duration: 0.6,
+      ease: "easeOut",
+    },
+  }),
+};
+
+
 const SkillsContent = () => {
-  const GridItem = ({ area, icon, title, description, category }) => {
+  const GridItem = ({ area, icon, title, category, index }) => {
     return (
-      <li className={` list-none ${area}`}>
+      <motion.li
+        className={`list-none ${area}`}
+        custom={index}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp}
+      >
         <div className="relative h-full rounded-2xl border p-1 bg-[#F7F7F7] dark:bg-[#1A1A1A] md:rounded-3xl">
           <GlowingEffect
             spread={100}
@@ -22,11 +42,11 @@ const SkillsContent = () => {
           />
           <div className="relative flex h-full flex-col gap-6 bg-[#F7F7F7] dark:bg-[#1A1A1A] rounded-xl border-0.75 p-6 md:p-6">
             <div className="relative flex gap-3">
-              <div className="w-fit rounded-lg border border-gray-600 p-2 ">
+              <div className="w-fit rounded-lg border border-gray-600 p-2">
                 {icon}
               </div>
               <div>
-                <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-balance text-black dark:text-white">
+                <h3 className="pt-0.5 text-xl/[1.375rem] font-semibold font-sans -tracking-4 md:text-2xl/[1.875rem] text-black dark:text-white">
                   {title}
                 </h3>
               </div>
@@ -35,9 +55,7 @@ const SkillsContent = () => {
               {category.map((skill, index) => (
                 <Badge
                   key={index}
-                  className={
-                    "px-2 py-1 text-lg bg-[#eeeeed] flex gap-2 text-black dark:bg-[#000000] dark:text-[#EEEEED]"
-                  }
+                  className="px-2 py-1 text-lg bg-[#eeeeed] flex gap-2 text-black dark:bg-[#000000] dark:text-[#EEEEED]"
                 >
                   <img
                     src={skill.icon}
@@ -52,53 +70,57 @@ const SkillsContent = () => {
           </div>
           <BackgroundBeams />
         </div>
-      </li>
+      </motion.li>
     );
   };
 
   return (
     <div>
-      <div className="flex flex-col gap-6 py-10 sm:py-14 ">
-        <div className="dark:text-[#EEEEED]">
-          <div className="text-xl  sm:text-2xl md:text-3xl font-bold">
+      <div className="flex flex-col gap-6 py-10 sm:py-14">
+        <motion.div initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeInUp} className="dark:text-[#EEEEED]">
+          <div className="text-xl sm:text-2xl md:text-3xl font-bold">
             The Tools That Build My Vision
           </div>
           <div className="text-xs sm:text-lg md:text-xl font-bold">
             ⚡The Backbone of Creation
           </div>
-        </div>
-        {/* skills card  main */}
+        </motion.div>
+
         <div className="flex gap-2 relative">
-          <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 lg:gap-4  xl:grid-rows-2">
+          <ul className="grid grid-cols-1 grid-rows-none gap-4 md:grid-cols-12 lg:gap-4 xl:grid-rows-2">
             <GridItem
+              index={0}
               area="col-span-12 md:col-span-8"
               icon={
                 <Sparkles className="h-4 w-4 text-black dark:text-neutral-400" />
               }
               title="Frontend"
-              description="Running out of copy so I'll write anything."
               category={frontendSkills}
             />
-
             <GridItem
+              index={1}
               area="col-span-12 md:col-span-4"
-              icon={
-                <Lock className="h-4 w-4 text-black dark:text-neutral-400" />
-              }
+              icon={<Lock className="h-4 w-4 text-black dark:text-neutral-400" />}
               title="Backend"
-              description="It's the best money you'll ever spend"
               category={backendSkills}
             />
             <GridItem
+              index={2}
               area="col-span-12 md:col-span-4"
-              icon={
-                <Box className="h-4 w-4 text-black dark:text-neutral-400" />
-              }
+              icon={<Box className="h-4 w-4 text-black dark:text-neutral-400" />}
               title="Other Tools"
-              description="I'm not even kidding. Ask my mom if you don't believe me."
               category={otherTools}
             />
-            <div className="col-span-12 md:col-span-8 relative flex h-full text-center flex-col justify-between gap-6 bg-[#F7F7F7] dark:bg-[#1A1A1A] rounded-xl border-0.75 p-6 md:p-6">
+            <motion.div
+              className="col-span-12 md:col-span-8 relative flex h-full text-center flex-col justify-between gap-6 bg-[#F7F7F7] dark:bg-[#1A1A1A] rounded-xl border-0.75 p-6 md:p-6"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.7, duration: 0.6 }}
+              viewport={{ once: true }}
+            >
               <GlowingEffect
                 spread={100}
                 glow={true}
@@ -115,7 +137,7 @@ const SkillsContent = () => {
                 ⚡Building, designing, and optimizing with these technologies.⚡
               </div>
               <BackgroundBeams />
-            </div>
+            </motion.div>
           </ul>
         </div>
       </div>

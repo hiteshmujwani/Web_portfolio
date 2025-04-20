@@ -1,15 +1,17 @@
+"use client";
+
 import Header from "@/app/_components/Header";
-import React from "react";
+import React, { useRef } from "react";
 import HeroContent from "./_components/HeroContent";
-import CursorFollower from "@/app/_components/CursorFollower";
-import { FlipWords } from "@/components/ui/flip-words";
-import { FloatingNav } from "@/app/_components/Floating-Dock";
-import { ScrollDown } from "@/app/_components/ScrollDown";
+import { motion, useInView } from "framer-motion";
 
 const Hero = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className=" h-screen font-lora hero-section relative  px-4 sm:px-12 xl:px-24">
-      <div className="h-full w-full absolute z-[-1] top-0 left-0 ">
+    <div className="h-[60vh] font-lora hero-section relative px-4 sm:px-12 xl:px-24">
+      <div className="h-full w-full fixed z-[-1] top-0 left-0">
         <img
           src="/mainbgmobile.png"
           className="object-cover h-full w-full md:hidden dark:invert-100"
@@ -19,15 +21,18 @@ const Hero = () => {
           className="object-cover h-full w-full hidden md:block dark:invert-100"
         />
       </div>
-      <div className="">
-        <div className=" ">
-          <div className="">
-            <Header />
-          </div>
-          <div className=" flex items-center py-10 sm:py-14">
-            <HeroContent />
-          </div>
-        </div>
+
+      <div>
+      
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 80 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 1, ease: "easeOut" }}
+          className="flex items-center py-10 sm:py-14"
+        >
+          <HeroContent />
+        </motion.div>
       </div>
     </div>
   );

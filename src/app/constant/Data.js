@@ -232,7 +232,7 @@ export const projectsData = [
       "A visually stunning and fully responsive portfolio showcasing my skills, experience, and projects. Built with modern web technologies, it delivers an engaging and seamless user experience.",
     techStack: ["React.js", "Tailwind CSS", "Framer Motion", "Vercel"],
     image:
-      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742395919/uxrbzcsvwrzdrehf7m7t.png",
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1745176937/psgd3y6zr1t1xm2a5mow.png",
     liveLink: "https://hiteshmujwani.online",
     github: "https://github.com/hiteshmujwani",
     videoLink: "",
@@ -242,10 +242,10 @@ export const projectsData = [
   },
 
   {
-    title: "Eatzaa - Qr Menu System",
+    title: "Advance Todo List App",
     Subtitles: "Web Application",
     description:
-      "A web application designed for restaurants and cafés to provide an online menu and table-based food ordering system. Customers can scan a QR code, access the menu, and place orders with real-time payment integration via Razorpay. Separate access is provided for admins and users, ensuring smooth order management and tracking.",
+      "A feature-rich task management app allowing users to add, update, and organize todos by priority levels. Designed for improved productivity with a clean UI, status filters, and real-time updates.",
     techStack: [
       "MERN Stack",
       "Next.js",
@@ -285,7 +285,7 @@ export const projectsData = [
   },
   {
     title: "PingMe",
-    Subtitles: "Web Application + Android Application",
+    Subtitles: "Web Application + Android Application ( Coming Soon... )",
     description:
       "PingMe is a responsive chat application that enables real-time messaging, group chats, and file sharing. It features WebSocket-based live updates and supports both web and mobile platforms for seamless communication.",
     techStack: [
@@ -296,7 +296,7 @@ export const projectsData = [
       "Tailwind CSS",
     ],
     image:
-      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1742396310/te4xxl2yyo7orkcihv20.png", // Replace with actual image URL
+      "https://res.cloudinary.com/dtje2rtke/raw/upload/v1745177659/gi9gc7ijcm0kid0gmxq4.png", // Replace with actual image URL
     liveLink: "https://github.com/hiteshmujwani",
     github: "https://github.com/hiteshmujwani",
     videoLink: "",
@@ -310,7 +310,7 @@ export const projectsData = [
     description:
       "An exciting new project that is currently under development. Stay tuned for more updates!",
     techStack: ["React.js", "Next.js", "Tailwind CSS"],
-    image: "https://i.imgur.com/sample-image.png", // Replace with actual image URL
+    image: "https://res.cloudinary.com/dtje2rtke/raw/upload/v1745177522/h6istbces4rjhwkywydb.png", // Replace with actual image URL
     liveLink: "https://github.com/hiteshmujwani",
     github: "https://github.com/hiteshmujwani",
     videoLink: "",

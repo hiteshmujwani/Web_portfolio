@@ -1,17 +1,27 @@
-import React from "react";
+"use client";
+
+import React, { useRef } from "react";
 import { Highlight } from "@/components/ui/hero-highlight";
 import {
   IconBrandGithub,
-  IconBrandGithubFilled,
   IconBrandInstagram,
   IconBrandLinkedin,
 } from "@tabler/icons-react";
-import { Book, BookAIcon, BookCheck, Dot, DotIcon, Github } from "lucide-react";
+import { BookCheck } from "lucide-react";
 import Link from "next/link";
+import { motion, useInView } from "framer-motion";
 
 const AboutContent = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <div>
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 1, ease: "easeOut" }}
+    >
       <div className="flex flex-col gap-6 py-10 sm:py-14">
         <div>
           <div className="text-xl sm:text-2xl md:text-3xl font-bold">
@@ -22,7 +32,7 @@ const AboutContent = () => {
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 text-md sm:text-lg md:text-xl leading-7 font-base ">
+        <div className="flex flex-col gap-3 text-md sm:text-lg md:text-xl leading-7 font-base">
           <div>
             A passionate
             <Highlight>
@@ -76,13 +86,13 @@ const AboutContent = () => {
           </div>
         </div>
       </div>
+
       <div className="flex justify-between flex-col gap-5 md:gap-0 md:flex-row md:items-center md:py-10">
-        <div className="flex flex-col gap-3 ">
+        <div className="flex flex-col gap-3">
           <div className="flex items-start gap-2">
             <BookCheck className="hidden md:flex" />
-
             <div>
-              <div className=" text-base  sm:text-lg font-medium">
+              <div className="text-base sm:text-lg font-medium">
                 Bachelors in Commerce - Rajasthan University
               </div>
               <div className="font-medium">2020 - 2023</div>
@@ -90,28 +100,28 @@ const AboutContent = () => {
           </div>
           <div className="flex items-start gap-2">
             <BookCheck className="hidden md:flex" />
-
             <div>
-              <div className=" text-base sm:text-lg font-medium">
-                Masters In Computer Applications - Kukukshetra University
+              <div className="text-base sm:text-lg font-medium">
+                Masters In Computer Applications - Kurukshetra University
               </div>
               <div className="font-medium">2024 - 2026</div>
             </div>
           </div>
         </div>
-        <div className="font-medium flex  gap-3 text-lg">
-          <Link href={""} className="">
-            <IconBrandGithub className="dark:text-black size-8 md:size-10 dark:bg-white text-white bg-black rounded-full p-1 hover:translate-y-[-10px] duration-300" />{" "}
-          </Link>{" "}
-          <Link href={""}>
+
+        <div className="font-medium flex gap-3 text-lg">
+          <Link href={"https://github.com/hiteshmujwani"}>
+            <IconBrandGithub className="dark:text-black size-8 md:size-10 dark:bg-white text-white bg-black rounded-full p-1 hover:translate-y-[-10px] duration-300" />
+          </Link>
+          <Link href={"https://www.linkedin.com/in/hitesh-mujwani-7587162b2/"}>
             <IconBrandLinkedin className="dark:text-black size-8 md:size-10 dark:bg-white text-white bg-black rounded-full p-1 hover:translate-y-[-10px] duration-300" />
-          </Link>{" "}
-          <Link href={""}>
+          </Link>
+          <Link href={"https://www.instagram.com/hxxitesh/"}>
             <IconBrandInstagram className="dark:text-black size-8 md:size-10 dark:bg-white text-white bg-black rounded-full p-1 hover:translate-y-[-10px] duration-300" />
           </Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

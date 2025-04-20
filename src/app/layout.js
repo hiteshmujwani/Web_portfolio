@@ -61,8 +61,8 @@ const firaSans = Fira_Sans({
 });
 
 export const metadata = {
-  title: "My Portfolio",
-  description: "Showcasing my skills and projects",
+  title: "Hitesh Mujwani",
+  description: "Full Stack Developer",
 };
 
 export default function RootLayout({ children }) {
